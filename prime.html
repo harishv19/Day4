@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <script>
+    // Anonymous function
+        const getPrimeNumbers = function(arr) {
+        return arr.filter(function(num) {
+            if (num < 2) return false;
+            for (let i = 2; i <= Math.sqrt(num); i++) {
+            if (num % i === 0) return false;
+            }
+            return true;
+        });
+        };
+
+        console.log(getPrimeNumbers([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]));
+
+        // IIFE
+        (function(arr) {
+        const primes = arr.filter(function(num) {
+            if (num < 2) return false;
+            for (let i = 2; i <= Math.sqrt(num); i++) {
+            if (num % i === 0) return false;
+            }
+            return true;
+        });
+        console.log(primes);
+        })([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);
+
+   </script> 
+</body>
+</html>
